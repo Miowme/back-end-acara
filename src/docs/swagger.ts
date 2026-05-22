@@ -28,6 +28,16 @@ const doc = {
                 identifier: "williamsusanto",
                 password: "master123",
             },
+            RegisterRequest: {
+                fullName: "Shamizu Yomimaru",
+                username: "shamizu2026",
+                email: "shamizu@yopmail.com",
+                password: "Abc123",
+                confirmPassword: "Abc123",
+            },
+            ActivationRequest: {
+                code: "abcdef",
+            },
         },
     },
 };
