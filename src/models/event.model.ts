@@ -20,6 +20,7 @@ export const eventDAO = Yup.object({
     location: Yup.object().shape({
       region: Yup.number(),
       coordinates: Yup.array(),
+      address: Yup.string(),
     }).required(),
 });
 
@@ -85,7 +86,10 @@ const EventSchema = new Schema<Event>({
             coordinates: {
                 type: [Schema.Types.Number],
                 default: [0, 0],
-            }
+            },
+            address: {
+                type: Schema.Types.String,
+            },
         },
     },
   },
@@ -101,6 +105,7 @@ EventSchema.pre("save", function () {
     }
 });
 
+EventSchema.index({ name: "text", description: "text" });
 const EventModel = mongoose.model("Event", EventSchema);
 
 export default EventModel;
