@@ -98,7 +98,7 @@ const EventSchema = new Schema<Event>({
   {
     timestamps: true,
   }
-);
+).index({ name: "text"});
 
 EventSchema.pre("save", function () {
     if(!this.slug) {
@@ -107,7 +107,6 @@ EventSchema.pre("save", function () {
     }
 });
 
-EventSchema.index({ name: "text", description: "text" });
 const EventModel = mongoose.model(EVENT_MODEL_NAME, EventSchema);
 
 export default EventModel;

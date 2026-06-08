@@ -61,7 +61,19 @@ const doc = {
             },
             RemoveMediaRequest: {
                 fileUrl: "",
-            }
+            },
+            CreateBannerRequest: {
+                "title": "Banner 1 - Bisnis AI",
+                "image": "https://res.cloudinary.com/dtzx3iirr/image/upload/v1780736114/kko2xsartnkzt4dhyprs.jpg",
+                "isShow": true
+            },
+            CreateTicketRequest: {
+                "price": 1500,
+                "name": "Ticket Reguler",
+                "events": "6a22a639e79091e2765de74b",
+                "description": "Ticket Reguler - Seat Nobar Reguler",
+                "quantity": 100
+            },
         },
     },
 };
