@@ -52,6 +52,7 @@ export default {
                 .limit(+limit)
                 .skip((+page - 1) * +limit)
                 .sort({ createdAt: -1 })
+                .lean()
                 .exec();
 
             const count = await EventModel.countDocuments(query);
@@ -60,7 +61,7 @@ export default {
                 current: +page,
                 total: count,
                 totalPages: Math.ceil(count / +limit),
-            }, "success fetch all event");
+            }, "success find all events");
         } catch (error) {
             response.error(res, error, "failed find all events");
         }
