@@ -74,6 +74,11 @@ const doc = {
                 "description": "Ticket Reguler - Seat Nobar Reguler",
                 "quantity": 100
             },
+            CreateOrderRequest: {
+                "events": "event object id",
+                "ticket": "ticket object id",
+                "quantity": 1,
+            },
         },
     },
 };
