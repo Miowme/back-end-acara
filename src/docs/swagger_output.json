@@ -118,6 +118,64 @@
         }
       }
     },
+    "/auth/update-profile": {
+      "put": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/UpdateProfileRequest"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#components/schemas/UpdateProfileRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/update-password": {
+      "put": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/UpdatePasswordRequest"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#components/schemas/UpdatePasswordRequest"
+              }
+            }
+          }
+        }
+      }
+    },
     "/orders": {
       "post": {
         "tags": [
@@ -1407,6 +1465,42 @@
           "name": "ActivationRequest"
         }
       },
+      "UpdateProfileRequest": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "example": ""
+          },
+          "profilePicture": {
+            "type": "string",
+            "example": ""
+          }
+        },
+        "xml": {
+          "name": "UpdateProfileRequest"
+        }
+      },
+      "UpdatePasswordRequest": {
+        "type": "object",
+        "properties": {
+          "oldPassword": {
+            "type": "string",
+            "example": ""
+          },
+          "password": {
+            "type": "string",
+            "example": ""
+          },
+          "confirmPassword": {
+            "type": "string",
+            "example": ""
+          }
+        },
+        "xml": {
+          "name": "UpdatePasswordRequest"
+        }
+      },
       "CreateCategoryRequest": {
         "type": "object",
         "properties": {
@@ -1552,6 +1646,26 @@
         },
         "xml": {
           "name": "CreateTicketRequest"
+        }
+      },
+      "CreateOrderRequest": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "string",
+            "example": "event object id"
+          },
+          "ticket": {
+            "type": "string",
+            "example": "ticket object id"
+          },
+          "quantity": {
+            "type": "number",
+            "example": 1
+          }
+        },
+        "xml": {
+          "name": "CreateOrderRequest"
         }
       }
     }
