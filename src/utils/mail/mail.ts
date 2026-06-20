@@ -28,6 +28,7 @@ export interface ISendMail {
 export const sendMail = async ({ ...mailParams }: ISendMail) => {
     const result = await transporter.sendMail({
         ...mailParams,
+        from: '"Event Management" <williamsusantolukman@gmail.com>',
     });
     return result;
 };
